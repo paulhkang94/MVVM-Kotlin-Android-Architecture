@@ -8,11 +8,11 @@ Model-View-ViewModel (ie MVVM) is a template of a client application architectur
 You can also check [**MVP**](https://github.com/ahmedeltaher/Android-MVP-Architecture)
 
 **Why Promoting MVVM VS MVP:**
-- ViewModel has Built in LifeCycleOwerness, on the other hand Presenter not, and you have to take this responsiblty in your side.
-- ViewModel doesn't have a reference for View, on the other hand Presenter still hold a reference for view, even if you made it as weakreference.
-- ViewModel survive configuration changes, while it is your own responsiblities to survive the configuration changes in case of Presenter. (Saving and restoring the UI state)
+- ViewModel has Built in LifeCycle Owners, on the other hand Presenter not, and you have to take this responsibility in your side.
+- ViewModel doesn't have a reference for View, on the other hand Presenter still hold a reference for view, even if you made it as weak reference.
+- ViewModel survive configuration changes, while it is your own responsibilities to survive the configuration changes in case of Presenter. (Saving and restoring the UI state)
 
-**MVVM Best Pratice:**
+**MVVM Best Practice:**
 - Avoid references to Views in ViewModels.
 - Instead of pushing data to the UI, let the UI observe changes to it.
 - Distribute responsibilities, add a domain layer if needed.
@@ -21,15 +21,11 @@ You can also check [**MVP**](https://github.com/ahmedeltaher/Android-MVP-Archite
 - Consider edge cases, leaks and how long-running operations can affect the instances in your architecture.
 - Don’t put logic in the ViewModel that is critical to saving clean state or related to data. Any call you make from a ViewModel can be the last one.
 
-
 **What is Coroutines ?**
 -------------------
-
  **Coroutines :**
 Is light wight threads for asynchronous programming, Coroutines not only open the doors to
 asynchronous programming, but also provide a wealth of other possibilities such as concurrency, actors, etc.
-
-----------
 
 **Coroutines VS RXJava**
 -------------------
@@ -42,8 +38,7 @@ They're different tools with different strengths. Like a tank and a cannon, they
 **How does Coroutines concept work ?**
 ------------
  - Kotlin coroutine is a way of doing things asynchronously in a sequential manner. Creating a coroutine is a lot cheaper vs creating a thread.
-
-
+ 
 **When I can choose Coroutines or RX-Kotlin to do some behaviour ?**
 --------------------------
  - Coroutines : *When we have concurrent tasks , like you would fetch data from Remote connections
@@ -52,19 +47,15 @@ They're different tools with different strengths. Like a tank and a cannon, they
  - RX-Kotlin : *When you would to handle stream of UI actions like : user scrolling , clicks ,
  update UI upon some events .....ect .*
 
-
 **What is the Coroutines benefits?**
 -----------------------------
-
  - Writing an asynchronous code is sequential manner.
- - Costing of create coroutines are much cheaper to crate threads.
+ - Costing of create coroutines are much cheaper to create threads.
  - Don't be over engineered to use observable pattern, when no need to use it.
  - parent coroutine can automatically manage the life cycle of its child coroutines for you.
 
-
 **Handle Retrofit with Coroutines**
 -----------------------------
-
 ![8399](https://user-images.githubusercontent.com/1812129/68318999-e93b0680-00bd-11ea-9d76-058222c7a654.png)
 
  - Add Coroutines to your gradle file
